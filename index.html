@@ -19,8 +19,8 @@
     <!-- SweetAlert2 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.2/dist/sweetalert2.min.css" rel="stylesheet">
     
-    <!-- Custom Style -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Custom Style (dengan versi v=2 agar langsung ter-update) -->
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
@@ -408,7 +408,8 @@
 
                                         <div class="mb-3">
                                             <label class="form-label small fw-semibold">Jumlah Kuantitas <span class="text-danger">*</span></label>
-                                            <input type="number" id="stokJumlah" class="form-control" min="1" required placeholder="Masukkan angka (misal: 10)">
+                                            <!-- Mendukung angka desimal (step="any") -->
+                                            <input type="number" id="stokJumlah" class="form-control" min="0.01" step="any" required placeholder="Masukkan angka (misal: 10 atau 0.5)">
                                         </div>
 
                                         <div class="mb-3">
@@ -693,34 +694,34 @@
                             <!-- Input Harga -->
                             <div class="col-12 col-md-3">
                                 <label class="form-label small fw-semibold">Harga Modal / HPP (Rp) <span class="text-danger">*</span></label>
-                                <input type="number" id="prodHargaModal" class="form-control" min="0" required value="0">
+                                <input type="number" id="prodHargaModal" class="form-control" min="0" step="any" required value="0">
                             </div>
 
                             <div class="col-12 col-md-3">
                                 <label class="form-label small fw-semibold">Harga Jual Ecer (Rp) <span class="text-danger">*</span></label>
-                                <input type="number" id="prodHargaEcer" class="form-control" min="0" required value="0">
+                                <input type="number" id="prodHargaEcer" class="form-control" min="0" step="any" required value="0">
                             </div>
 
                             <div class="col-12 col-md-3">
                                 <label class="form-label small fw-semibold">Harga Jual Grosir (Rp)</label>
-                                <input type="number" id="prodHargaGrosir" class="form-control" min="0" required value="0">
+                                <input type="number" id="prodHargaGrosir" class="form-control" min="0" step="any" required value="0">
                             </div>
 
                             <div class="col-12 col-md-3">
                                 <label class="form-label small fw-semibold">Min. Qty Grosir</label>
-                                <input type="number" id="prodMinGrosir" class="form-control" min="0" required value="5">
+                                <input type="number" id="prodMinGrosir" class="form-control" min="0" step="any" required value="5">
                                 <div class="form-text" style="font-size: 0.7rem;">Isi 0 jika tanpa grosir</div>
                             </div>
 
-                            <!-- Stok -->
+                            <!-- Stok (Mendukung Desimal step="any") -->
                             <div class="col-12 col-md-6">
                                 <label class="form-label small fw-semibold">Stok Saat Ini <span class="text-danger">*</span></label>
-                                <input type="number" id="prodStokSaatIni" class="form-control" min="0" required value="0">
+                                <input type="number" id="prodStokSaatIni" class="form-control" min="0" step="any" required value="0">
                             </div>
 
                             <div class="col-12 col-md-6">
                                 <label class="form-label small fw-semibold">Batas Stok Minimum (Peringatan) <span class="text-danger">*</span></label>
-                                <input type="number" id="prodBatasStokMin" class="form-control" min="0" required value="5">
+                                <input type="number" id="prodBatasStokMin" class="form-control" min="0" step="any" required value="5">
                             </div>
 
                             <!-- Upload Foto Produk dengan Kompresi Otomatis -->
@@ -854,7 +855,7 @@
     <!-- Supabase JS SDK v2 -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-    <!-- Main Application Script -->
-    <script src="app.js"></script>
+    <!-- Main Application Script (dengan ?v=2 agar browser langsung memuat fitur baru) -->
+    <script src="app.js?v=2"></script>
 </body>
 </html>
