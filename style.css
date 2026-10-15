@@ -247,7 +247,7 @@ body {
 }
 
 /* =========================================================
-   MODUL KASIR (POS)
+   MODUL KASIR (POS) & INPUT HARGA DINAMIS
 ========================================================= */
 .category-pills-wrapper {
     display: flex;
@@ -318,7 +318,7 @@ body {
 }
 
 .cart-items-container {
-    max-height: 310px;
+    max-height: 330px;
     overflow-y: auto;
     border: 1px solid #e9ecef;
     border-radius: 0.5rem;
@@ -332,6 +332,17 @@ body {
 
 .cart-item-row:last-child {
     border-bottom: none;
+}
+
+/* Hilangkan panah spinner di dalam input angka keranjang agar nominal terlihat penuh */
+.cart-item-row input[type="number"]::-webkit-outer-spin-button,
+.cart-item-row input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.cart-item-row input[type="number"] {
+    -moz-appearance: textfield;
 }
 
 /* =========================================================
